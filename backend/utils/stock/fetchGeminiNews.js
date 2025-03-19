@@ -52,3 +52,38 @@ const generateNews = async() => {
 
 module.exports = { generateNews };
 
+
+
+
+// `
+// This is simulated stock market environment. The company, sectors and their stock movements are
+// fictional. Generate a short stock market news update for a company in either healthcare structure. The companies names are Medicorp Innovations and vitality pharma.
+
+// Ensure that the sentiment is influenced by both the indivisual company's situation and the broader
+// sector trends. The volatility should refeclt the overall impace of the news. 
+
+// DO not include exact stock prices or financial figures. Only return a valid JSOn response in the following format:-
+
+// {
+//   Sector_Name : {
+//   	Company_One : {
+// 		news : "2-3 lines",
+// 		randomness : to add uniqueness
+// 		volatility : would describe the condition of change of stock price
+// 		sector sentiment: would describe the sector sentiment
+// 		company sentiment : Would describe the company sentiment
+// 	},
+// 	Company_TWO : {
+// 		news : "2-3 lines",
+// 		randomness : to add uniqueness
+// 		volatility : would describe the condition of change of stock price
+// 		sector sentiment: would describe the sector sentiment
+// 		company sentiment : Would describe the company sentiment
+// 	}
+//     }
+// }
+
+// The available values for sector sentiment and company sentiment are highly_positive, positive, neutral, negative, and highly negative. The available values for volatility are low, moderate, high, extreme. The available values for randomness are low, moderate and high.
+
+// DO NOT DEVIATE FROM THE GIVEN JSON FORMAT. Also make sure, that all the factors listed in the JSON format, should be relatable with the news.
+// `
