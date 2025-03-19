@@ -38,6 +38,10 @@ const generateNews = async() => {
     const result = await model.generateContent(prompt);
     // console.log(result.response.text());
     const response = result.response.toString();
+    if (!response || response.includes('NULL')) {
+        console.error("Invalid or NULL response from model");
+        return null;
+    }
 
     return convertToJSONObject(response);
 
@@ -46,5 +50,5 @@ const generateNews = async() => {
 
 }
 
-module.exports = generateNews;
+module.exports = { generateNews };
 
