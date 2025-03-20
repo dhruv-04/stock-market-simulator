@@ -6,8 +6,11 @@ const fetchNews = async() => {
     try {
         const news = await generateNews();
         if(news) {
-            await insertIntoFreshNews(JSON.stringify(news));
-            console.log('Fetched news:', news);
+            // console.log(news);
+            for (const [key, value] of Object.entries(news)) {
+                console.log(`Movement of news about ${key} to fresh news : ${value}\n`);
+                await insertIntoFreshNews(JSON.stringify({ [key]: value }));
+            }
         } else if (news === null) {
             const failMessage = {
                 news: "The stock market is stable, with no significant changes reported. Investors are monitoring global trends.",
@@ -15,9 +18,8 @@ const fetchNews = async() => {
                 volatility: "Low",
                 sector: "General Market",
                 company: "Global Index",
-                createdAt: new Date().toISOString()
             };
-            await insertIntoFreshNews(JSON.stringify(failMessage));
+            await insertIntoFreshNews(JSON.stringify({ ['General'] : failMessage }));
         }
     } catch (err) {
         console.error('Error fetching news:', err);
@@ -25,12 +27,12 @@ const fetchNews = async() => {
     }
 };
 
-// const test = async() => {
-//     await fetchNews();
-//     console.log('Fetched news');
-// };
+const test = async() => {
+    await fetchNews();
+    console.log('Fetched news');
+};
 
-// test();
+test();
 
 module.exports = {
     fetchNews
