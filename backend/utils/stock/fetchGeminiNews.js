@@ -62,16 +62,16 @@ const generateNews = async() => {
             news : "2-3 lines",
             randomness : "to add uniqueness",
             volatility : "would describe the condition of change of stock price",
-            sector sentiment: "would describe the sector sentiment",
-            company sentiment : "Would describe the company sentiment",
+            sector_sentiment: "would describe the sector sentiment",
+            company_sentiment : "Would describe the company sentiment",
             sector: ${sectorInp},
         },
         ${companies[sectorInp][1]} : {
             news : "2-3 lines",
             randomness : to add uniqueness
             volatility : would describe the condition of change of stock price
-            sector sentiment: would describe the sector sentiment
-            company sentiment : Would describe the company sentiment
+            sector_sentiment: would describe the sector sentiment
+            company_sentiment : Would describe the company sentiment
             sector: ${sectorInp},
         }
     }

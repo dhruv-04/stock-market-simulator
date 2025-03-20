@@ -7,15 +7,11 @@ connectRedis();
 const insertNews = async(keyName, news) => {
     try {
         await redisClient.rPush(keyName, news);
+        console.log(`Insertion into ${keyName} successful\n\n`);
     } catch (err) {
         console.error('Error inserting news:', err);
         throw err;
     }
-};
-
-//function to insert news in seen_news
-const insertIntoSeenNews = async(news) => {
-    await insertNews('seen_news', news);
 };
 
 //function to insert news in fresh news which would be coming from the Gemini API
@@ -23,68 +19,59 @@ const insertIntoFreshNews = async(news) => {
     await insertNews('fresh_news', news);
 };
 
-//function to insert news in unseen news from fresh news
-const insertIntoUnseenNews = async(news) => {
-    await insertNews('unseen_news', news);
-};
-
 //function to push news from fresh news to unseen news
-const pushFreshToUnseen = async() => {
+const pushFreshToSeen = async() => {
     try {
-        const fetchFreshNews = await redisClient.lRange('fresh_news', 0, -1);
-        if (fetchFreshNews.length > 0) {
-            await redisClient.rpush('unseen_news', ...fetchFreshNews);
-            console.log('Moved fresh news to unseen news:', fetchFreshNews);
+        const fetchFreshNews = await redisClient.lPop('fresh_news');
+        if (fetchFreshNews) {
+            await redisClient.rPush('seen_news', fetchFreshNews);
+            await redisClient.rPush('current_news', fetchFreshNews);
+            console.log('Moved fresh news to seen news:', fetchFreshNews);
         }
-        redisClient.del('fresh_news');
-        const { fetchNews } = require('../GeminiToFresh');
+        const { fetchNews } = require('./GeminiToFresh');
         await fetchNews();
     } catch (err) {
-        console.error('Error pushing fresh news to unseen news:', err);
+        console.error('Error pushing fresh news to seen news:', err);
         throw err;
     }
 };
 
-//function to push news from unseen news to seen news (one by one process)
-const pushUnseenToSeen = async() => {
+//function to fetch from current news
+const fetchFromCurrentNews = async() => {
     try {
-        const fetchUnseenNews = await redisClient.lPop('unseen_news'); //pops the very first news
-        if (fetchUnseenNews) {
-            await redisClient.rPush('seen_news', fetchUnseenNews);
-            console.log('Moved unseen news to seen news:', fetchUnseenNews);
-        }
-        const length = await redisClient.lLen('unseen_news');
-        if (length === 0) {
-            await pushFreshToUnseen();
-        }
-        return fetchUnseenNews;
+        const currentNews = await redisClient.lPop('current_news');
+        if (currentNews) {
+            const parsedNews = JSON.parse(currentNews);
+            const company = Object.keys(parsedNews);
+            return [company[0], parsedNews[company[0]]];
+        };
+        console.log('Current News:', currentNews);
     } catch (err) {
-        console.error('Error pushing unseen news to seen news:', err);
+        console.error('Error fetching current news:', err);
         throw err;
     }
-};
-
+}
 
 //function to push news from redis seen to firestore
 const redisToFireStore = async() => {
     try {
         const fetchSeenNews = await redisClient.lRange('seen_news', 0, -1);
         if(fetchSeenNews.length === 0) return;
-        // const parsedNews = fetchSeenNews.reduce((acc, news) => {
-        //     const parsed = JSON.parse(news); // Parse the current news JSON string
-        //     acc[parsed.company] = parsed; // Use the 'company' field as the key
-        //     return acc;
-        // }, {});
         const parsedNews = fetchSeenNews.reduce((acc, news) => {
+            // console.log('news:', news.);
             const parsed = JSON.parse(news);
-            if (!acc[parsed.company]) {
-              acc[parsed.company] = [];
+            // console.log('pars:', parsed);
+            // console.log('parsed:', parsed);
+            const company = Object.keys(parsed)[0];
+            console.log('Company:', company);
+            if (!acc[company]) {
+              acc[company] = [];
             }
-            acc[parsed.company].push(parsed);
+            acc[company].push(parsed[company]);
             return acc;
           }, {});
         console.log('parsedNews:', parsedNews);
-        redisClient.del('seen_news');
+        // redisClient.del('seen_news');
         const { pushNews } = require('../fireStoreServices/pushNews');
         await pushNews(parsedNews);
     } catch (err) {
@@ -93,102 +80,23 @@ const redisToFireStore = async() => {
     }
 };
 
-module.exports = { insertNews, insertIntoSeenNews, insertIntoFreshNews, insertIntoUnseenNews, pushFreshToUnseen, pushUnseenToSeen, redisToFireStore };
+module.exports = { insertIntoFreshNews, pushFreshToSeen, redisToFireStore, fetchFromCurrentNews };
 
 
 
-// newsData = [
-//         {
-//           "title": "Tech Titan Innovex Launches AI-powered Assistant",
-//           "sector": "Technology",
-//           "sentiment": "Positive",
-//           "volatility": "Moderate",
-//           "company": "Innovex"
-//         },
-//         {
-//             "title": "Tech Titan Innovex Launches AI-powered Assistant",
-//             "sector": "Technology",
-//             "sentiment": "Positive",
-//             "volatility": "Moderate",
-//             "company": "Innovex"
-//           },
-//         {
-//           "title": "GreenVolt Reports Unexpected Quarterly Losses",
-//           "sector": "Energy",
-//           "sentiment": "Negative",
-//           "volatility": "High",
-//           "company": "GreenVolt"
-//         },
-//         {
-//           "title": "AutoNova Sees Steady Growth Amidst EV Boom",
-//           "sector": "Automobile",
-//           "sentiment": "Positive",
-//           "volatility": "Low",
-//           "company": "AutoNova"
-//         },
-//         {
-//           "title": "PharmaCure’s New Drug Faces Regulatory Hurdles",
-//           "sector": "Healthcare",
-//           "sentiment": "Negative",
-//           "volatility": "Moderate",
-//           "company": "PharmaCure"
-//         },
-//         {
-//           "title": "SwiftBank Expands Digital Payment Solutions",
-//           "sector": "Finance",
-//           "sentiment": "Positive",
-//           "volatility": "Low",
-//           "company": "SwiftBank"
-//         },
-//         {
-//           "title": "AgroFuture’s Crop Yield Technology Gains Investor Interest",
-//           "sector": "Agriculture",
-//           "sentiment": "Positive",
-//           "volatility": "Moderate",
-//           "company": "AgroFuture"
-//         },
-//         {
-//           "title": "CyberShield Faces Backlash Over Data Breach Incident",
-//           "sector": "Cybersecurity",
-//           "sentiment": "Negative",
-//           "volatility": "High",
-//           "company": "CyberShield"
-//         },
-//         {
-//           "title": "Retail Giant ShopEase Announces Expansion Plans",
-//           "sector": "Retail",
-//           "sentiment": "Positive",
-//           "volatility": "Low",
-//           "company": "ShopEase"
-//         },
-//         {
-//           "title": "CloudWave Reports Lower-than-Expected Revenue Growth",
-//           "sector": "Cloud Computing",
-//           "sentiment": "Negative",
-//           "volatility": "Moderate",
-//           "company": "CloudWave"
-//         },
-//         {
-//           "title": "SolarGen’s Renewable Energy Projects Gain Government Backing",
-//           "sector": "Energy",
-//           "sentiment": "Positive",
-//           "volatility": "Moderate",
-//           "company": "SolarGen"
-//         }
-//       ];
-
-// const trialMethod = async() => {
-//     // const newsDataJson = JSON.stringify(newsData);
-//     // await newsData.map(async(news) => {
-//     //     await insertIntoSeenNews(JSON.stringify(news));
-//     // });
-//     redisClient.del('seen_news');
-//     await newsData.forEach(async (news) => {
-//         await insertIntoSeenNews(JSON.stringify(news));
-//     });
-//     // await insertIntoSeenNews(newsDataJson);
+// const test = async() => {
 //     await redisToFireStore();
-//     console.log('Trial method executed successfully');
+//     // const currentNews = await redisClient.lRange('seen_news', 0, -1);
+//     // await pushFreshToSeen();
+//     // console.log('currentNews: ', currentNews);
+//     // parsedNews = JSON.parse(currentNews[0]);
+//     // console.log('parsedNews: ', parsedNews);    
+//     // const company = Object.keys(parsedNews);
+//     // console.log('Company Name : ', company[0]);
+//     // console.log('currentNews: ', parsedNews[company[0]]);
+//     // redisClient.del('current_news');
+//     // redisClient.del('seen_news');
+//     // redisClient.del('fresh_news');
 // };
 
-// trialMethod();
+// test();

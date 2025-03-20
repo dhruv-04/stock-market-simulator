@@ -7,7 +7,7 @@ const redisClient = redis.createClient({
 });
 
 redisClient.on('connect', () => {
-    console.log('Connected to Redis');
+    // console.log('Connected to Redis');
 });
 
 redisClient.on('error', (error) => {
@@ -18,7 +18,7 @@ async function connectRedis() {
     if(!redisClient.isOpen) {
         await redisClient.connect();
     }
-    console.log('Redis connection established');
+    // console.log('Redis connection established');
 };
 
 module.exports = { redisClient, connectRedis };
