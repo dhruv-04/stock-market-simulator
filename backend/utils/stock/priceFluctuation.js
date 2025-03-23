@@ -123,7 +123,8 @@ const fluctuation = async(initialPrice, company_sentiment, sector_sentiment, vol
     const priceChange = (CS * 0.75) + (SS * 0.20) + (R * 0.05); 
     const finalChange = priceChange * V;
     const finalPrice = initialPrice + finalChange;
-    return { finalPrice, finalChange };
+    const percentageChange = (finalChange / initialPrice) * 100;
+    return { finalPrice, percentageChange };
 }
 
 module.exports = { fluctuation };
