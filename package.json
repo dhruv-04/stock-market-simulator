@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/bigquery": "^7.9.3",
     "@google/generative-ai": "^0.24.0",
     "axios": "^1.8.3",
     "dotenv": "^16.4.7",

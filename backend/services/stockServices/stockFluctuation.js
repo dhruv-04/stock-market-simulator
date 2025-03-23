@@ -10,33 +10,52 @@ const stockFluctuation = async () => {
         if(parsedStockDetails[stock].newPrice != null) {
             parsedStockDetails[stock].oldPrice = parsedStockDetails[stock].newPrice;
         }
-        const { finalPrice, finalChange } = await fluctuation( parsedStockDetails[stock].oldPrice, company_sentiment, sector_sentiment, volatility, randomness);
+        const { finalPrice, percentageChange } = await fluctuation( parsedStockDetails[stock].oldPrice, company_sentiment, sector_sentiment, volatility, randomness);
         parsedStockDetails[stock].newPrice = finalPrice;
-        parsedStockDetails[stock].percentChange = finalChange;
+        parsedStockDetails[stock].percentChange = percentageChange;
         parsedStockDetails[stock].timestamp = new Date(Date.now()).toISOString();
         console.log(`${stock} stock price has been updated to ${finalPrice}`);
     }
-    console.log(`\n\n\n`)
+    // console.log(`\n\n\n`)
     await redisClient.set("live_stock", JSON.stringify(parsedStockDetails));
+    console.log(`Stock prices updated in redis at timestamp ${new Date().toISOString()}`);
 };
 
-// stockFluctuation();
 
-module.exports = { stockFluctuation };
+const sendDataToBigQuery = async() => {
+    try {
+        const { insertIntoBigQuery } = require('./bigQueryservie');
+        const parsedStockDetails = JSON.parse(await redisClient.get('live_stock'));
+        //parsedStockDetails is an object with keys as company names and values as objects containing stock details
 
+        const data = [];
+        //data is an array of objects containing stock details
 
-// const testStockFluctuation = async () => {
-//     // for (let i = 1; i <= 10; i++) {
-//     //     console.log(`Iteration ${i} - Updating stock prices...`);
-//     //     await stockFluctuation();
-//     //     await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
-//     // }
-//     // console.log("Test completed!");
-//     const parsed = await redisClient.get("live_stock");
-//     console.log(parsed);
-// };
+        for (let stock in parsedStockDetails) {
+            data.push({
+                symbol: parsedStockDetails[stock].stockShortForm, //stock symbol
+                old_price: parsedStockDetails[stock].oldPrice, //stock old price
+                new_price: parsedStockDetails[stock].newPrice, //stock new price
+                percentage_change: parsedStockDetails[stock].percentChange, //stock percentage change
+                timestamp: parsedStockDetails[stock].timestamp //stock insertion timestamp
+            });
+        }
+        await insertIntoBigQuery('virtual_stock_data', 'stock_prices', data); //insertion into big query
+        console.log(`Batch insertion completed to Big Query in timestamp ${new Date().toISOString()}`);
+    } catch (error) {
+        console.error(`Error before sending data to BigQuery at timestamp ${new Date().toISOString()}`);
+    }
+}
 
-// testStockFluctuation();
+const test = async() => {
+    await stockFluctuation();
+    await sendDataToBigQuery();
+};
+
+test();
+
+module.exports = { stockFluctuation, sendDataToBigQuery };
+
 
 
 
