@@ -110,7 +110,7 @@ const generateNews = async() => {
 // // console.log(generateNews());
 // test();
 
-module.exports = { generateNews };
+module.exports = { generateNews, convertToJSONObject };
 
 
 
