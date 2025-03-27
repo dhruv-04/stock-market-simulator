@@ -1,0 +1,65 @@
+Company Name,Stock ID,News,Company Sentiment,Sector Sentiment,Volatility,Randomness
+NovaTech Solutions,NOVA,Recent product launch drives market excitement and investor confidence.,Neutral,Neutral,Moderate,Market speculation
+NovaTech Solutions,NOVA,Layoffs reported as part of cost-cutting measures.,Negative,Negative,Low,Industry trend shift
+NovaTech Solutions,NOVA,Layoffs reported as part of cost-cutting measures.,Positive,Neutral,High,Investor sentiment
+NovaTech Solutions,NOVA,"Company secures major contract, expanding market presence.",Neutral,Negative,Moderate,Industry trend shift
+NovaTech Solutions,NOVA,"Strategic partnership announced, expected to boost future growth.",Positive,Negative,Low,Market speculation
+NovaTech Solutions,NOVA,Regulatory challenges create uncertainty for the company.,Negative,Positive,Moderate,Investor sentiment
+NovaTech Solutions,NOVA,"Strategic partnership announced, expected to boost future growth.",Negative,Negative,Low,Investor sentiment
+NovaTech Solutions,NOVA,Company sees strong quarterly performance due to increased demand.,Negative,Positive,Low,Market speculation
+CyberDyne Systems,CYBR,Unexpected leadership change raises questions among investors.,Negative,Neutral,Low,Market speculation
+CyberDyne Systems,CYBR,Layoffs reported as part of cost-cutting measures.,Positive,Negative,Moderate,Industry trend shift
+CyberDyne Systems,CYBR,Recent product launch drives market excitement and investor confidence.,Positive,Positive,High,Market speculation
+CyberDyne Systems,CYBR,Company sees strong quarterly performance due to increased demand.,Negative,Neutral,High,Economic factors
+CyberDyne Systems,CYBR,Regulatory challenges create uncertainty for the company.,Neutral,Positive,High,Market speculation
+CyberDyne Systems,CYBR,Company sees strong quarterly performance due to increased demand.,Positive,Negative,Low,Economic factors
+CyberDyne Systems,CYBR,Recent product launch drives market excitement and investor confidence.,Negative,Negative,Low,Investor sentiment
+CyberDyne Systems,CYBR,Layoffs reported as part of cost-cutting measures.,Negative,Positive,Moderate,Market speculation
+Medicorp Innovations,MCRP,Recent product launch drives market excitement and investor confidence.,Positive,Positive,High,Investor sentiment
+Medicorp Innovations,MCRP,Recent product launch drives market excitement and investor confidence.,Neutral,Neutral,High,Economic factors
+Medicorp Innovations,MCRP,Unexpected leadership change raises questions among investors.,Positive,Negative,Moderate,Economic factors
+Medicorp Innovations,MCRP,Company sees strong quarterly performance due to increased demand.,Negative,Negative,High,Economic factors
+Medicorp Innovations,MCRP,Recent product launch drives market excitement and investor confidence.,Neutral,Negative,High,Industry trend shift
+Medicorp Innovations,MCRP,Layoffs reported as part of cost-cutting measures.,Neutral,Positive,Low,Market speculation
+Medicorp Innovations,MCRP,Layoffs reported as part of cost-cutting measures.,Neutral,Negative,Low,Investor sentiment
+Medicorp Innovations,MCRP,"Company secures major contract, expanding market presence.",Positive,Positive,Moderate,Industry trend shift
+Vitality Pharma,VPHM,Regulatory challenges create uncertainty for the company.,Negative,Positive,Moderate,Investor sentiment
+Vitality Pharma,VPHM,Supply chain disruptions impact production and delivery timelines.,Negative,Negative,High,Investor sentiment
+Vitality Pharma,VPHM,Unexpected leadership change raises questions among investors.,Positive,Negative,Moderate,Economic factors
+Vitality Pharma,VPHM,Regulatory challenges create uncertainty for the company.,Positive,Neutral,High,Industry trend shift
+Vitality Pharma,VPHM,Recent product launch drives market excitement and investor confidence.,Positive,Neutral,Low,Industry trend shift
+Vitality Pharma,VPHM,Layoffs reported as part of cost-cutting measures.,Neutral,Negative,Moderate,Market speculation
+Vitality Pharma,VPHM,Recent product launch drives market excitement and investor confidence.,Neutral,Neutral,Low,Market speculation
+Vitality Pharma,VPHM,"Strategic partnership announced, expected to boost future growth.",Neutral,Negative,Low,Market speculation
+Global Trust Investments,GTI,Regulatory challenges create uncertainty for the company.,Negative,Neutral,Low,Industry trend shift
+Global Trust Investments,GTI,"Strategic partnership announced, expected to boost future growth.",Positive,Neutral,Moderate,Industry trend shift
+Global Trust Investments,GTI,Supply chain disruptions impact production and delivery timelines.,Negative,Neutral,Moderate,Investor sentiment
+Global Trust Investments,GTI,"Strategic partnership announced, expected to boost future growth.",Negative,Negative,High,Economic factors
+Global Trust Investments,GTI,"Strategic partnership announced, expected to boost future growth.",Positive,Negative,High,Market speculation
+Global Trust Investments,GTI,"Strategic partnership announced, expected to boost future growth.",Negative,Neutral,Moderate,Economic factors
+Global Trust Investments,GTI,Recent product launch drives market excitement and investor confidence.,Negative,Negative,Moderate,Investor sentiment
+Global Trust Investments,GTI,"Strategic partnership announced, expected to boost future growth.",Neutral,Positive,Low,Investor sentiment
+Sterling Bancorp,STBC,Unexpected leadership change raises questions among investors.,Negative,Neutral,Moderate,Industry trend shift
+Sterling Bancorp,STBC,Unexpected leadership change raises questions among investors.,Positive,Neutral,Low,Investor sentiment
+Sterling Bancorp,STBC,Unexpected leadership change raises questions among investors.,Neutral,Neutral,Moderate,Market speculation
+Sterling Bancorp,STBC,Unexpected leadership change raises questions among investors.,Neutral,Negative,Low,Economic factors
+Sterling Bancorp,STBC,Supply chain disruptions impact production and delivery timelines.,Negative,Positive,Low,Market speculation
+Sterling Bancorp,STBC,Recent product launch drives market excitement and investor confidence.,Positive,Negative,Moderate,Industry trend shift
+Sterling Bancorp,STBC,Layoffs reported as part of cost-cutting measures.,Negative,Neutral,Low,Market speculation
+Sterling Bancorp,STBC,Unexpected leadership change raises questions among investors.,Negative,Neutral,High,Market speculation
+Edulink Learning,EDLK,Layoffs reported as part of cost-cutting measures.,Positive,Neutral,Moderate,Investor sentiment
+Edulink Learning,EDLK,Recent product launch drives market excitement and investor confidence.,Positive,Positive,High,Investor sentiment
+Edulink Learning,EDLK,Unexpected leadership change raises questions among investors.,Positive,Positive,Low,Investor sentiment
+Edulink Learning,EDLK,Supply chain disruptions impact production and delivery timelines.,Positive,Neutral,Moderate,Investor sentiment
+Edulink Learning,EDLK,Regulatory challenges create uncertainty for the company.,Positive,Negative,High,Investor sentiment
+Edulink Learning,EDLK,Company sees strong quarterly performance due to increased demand.,Positive,Neutral,High,Market speculation
+Edulink Learning,EDLK,Supply chain disruptions impact production and delivery timelines.,Negative,Negative,Moderate,Investor sentiment
+Edulink Learning,EDLK,"Strategic partnership announced, expected to boost future growth.",Negative,Neutral,Moderate,Industry trend shift
+EduCorp International,EDCI,Layoffs reported as part of cost-cutting measures.,Positive,Neutral,Low,Industry trend shift
+EduCorp International,EDCI,"Company secures major contract, expanding market presence.",Positive,Negative,High,Economic factors
+EduCorp International,EDCI,Company sees strong quarterly performance due to increased demand.,Neutral,Negative,Low,Market speculation
+EduCorp International,EDCI,"Strategic partnership announced, expected to boost future growth.",Negative,Neutral,High,Economic factors
+EduCorp International,EDCI,Layoffs reported as part of cost-cutting measures.,Negative,Neutral,Low,Investor sentiment
+EduCorp International,EDCI,"Company secures major contract, expanding market presence.",Neutral,Neutral,Low,Economic factors
+EduCorp International,EDCI,Layoffs reported as part of cost-cutting measures.,Positive,Neutral,Moderate,Investor sentiment
+EduCorp International,EDCI,Supply chain disruptions impact production and delivery timelines.,Neutral,Negative,Moderate,Economic factors

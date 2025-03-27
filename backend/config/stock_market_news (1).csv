@@ -1,0 +1,65 @@
+Company Name,Stock ID,News,Company Sentiment,Sector Sentiment,Volatility,Randomness
+NovaTech Solutions (NOVA),NOVA,NovaTech Solutions (NOVA) reports strong growth in technology sector.,4.72,1.08,1.0,-0.09
+NovaTech Solutions (NOVA),NOVA,NovaTech Solutions (NOVA) reports strong growth in technology sector.,4.17,-2.24,2.0,0.32
+NovaTech Solutions (NOVA),NOVA,NovaTech Solutions (NOVA) reports strong growth in technology sector.,4.96,-2.57,2.0,-0.06
+NovaTech Solutions (NOVA),NOVA,NovaTech Solutions (NOVA) reports strong growth in technology sector.,-2.85,2.56,2.0,0.08
+NovaTech Solutions (NOVA),NOVA,NovaTech Solutions (NOVA) reports strong growth in technology sector.,-0.41,2.16,2.0,-0.03
+NovaTech Solutions (NOVA),NOVA,NovaTech Solutions (NOVA) reports strong growth in technology sector.,-4.65,1.75,0.8,0.0
+NovaTech Solutions (NOVA),NOVA,NovaTech Solutions (NOVA) reports strong growth in technology sector.,3.66,0.2,1.0,0.26
+NovaTech Solutions (NOVA),NOVA,NovaTech Solutions (NOVA) reports strong growth in technology sector.,3.77,-1.78,2.0,0.26
+CyberDyne Systems (CYBR),CYBR,CyberDyne Systems (CYBR) reports strong growth in technology sector.,4.66,-0.27,2.0,-0.2
+CyberDyne Systems (CYBR),CYBR,CyberDyne Systems (CYBR) reports strong growth in technology sector.,-1.52,-0.44,1.5,0.31
+CyberDyne Systems (CYBR),CYBR,CyberDyne Systems (CYBR) reports strong growth in technology sector.,-0.33,2.09,0.8,0.33
+CyberDyne Systems (CYBR),CYBR,CyberDyne Systems (CYBR) reports strong growth in technology sector.,-4.62,2.71,2.0,0.22
+CyberDyne Systems (CYBR),CYBR,CyberDyne Systems (CYBR) reports strong growth in technology sector.,-4.95,-1.09,2.0,-0.2
+CyberDyne Systems (CYBR),CYBR,CyberDyne Systems (CYBR) reports strong growth in technology sector.,-3.12,-2.39,2.0,0.65
+CyberDyne Systems (CYBR),CYBR,CyberDyne Systems (CYBR) reports strong growth in technology sector.,-1.74,2.86,1.0,-0.01
+CyberDyne Systems (CYBR),CYBR,CyberDyne Systems (CYBR) reports strong growth in technology sector.,-2.51,-0.43,1.0,-0.0
+Medicorp Innovations (MCRP),MCRP,Medicorp Innovations (MCRP) reports strong growth in healthcare sector.,1.58,-1.48,0.8,0.83
+Medicorp Innovations (MCRP),MCRP,Medicorp Innovations (MCRP) reports strong growth in healthcare sector.,-4.75,0.51,2.0,0.04
+Medicorp Innovations (MCRP),MCRP,Medicorp Innovations (MCRP) reports strong growth in healthcare sector.,3.72,1.17,0.8,-0.06
+Medicorp Innovations (MCRP),MCRP,Medicorp Innovations (MCRP) reports strong growth in healthcare sector.,1.33,-2.52,1.0,0.1
+Medicorp Innovations (MCRP),MCRP,Medicorp Innovations (MCRP) reports strong growth in healthcare sector.,1.33,-1.6,1.0,0.42
+Medicorp Innovations (MCRP),MCRP,Medicorp Innovations (MCRP) reports strong growth in healthcare sector.,-4.4,-1.44,1.0,0.28
+Medicorp Innovations (MCRP),MCRP,Medicorp Innovations (MCRP) reports strong growth in healthcare sector.,-4.92,-2.52,1.5,0.21
+Medicorp Innovations (MCRP),MCRP,Medicorp Innovations (MCRP) reports strong growth in healthcare sector.,4.88,-0.86,1.0,0.23
+Vitality Pharma (VPHM),VPHM,Vitality Pharma (VPHM) reports strong growth in healthcare sector.,3.18,1.17,0.8,0.85
+Vitality Pharma (VPHM),VPHM,Vitality Pharma (VPHM) reports strong growth in healthcare sector.,-2.87,-0.84,2.0,0.9
+Vitality Pharma (VPHM),VPHM,Vitality Pharma (VPHM) reports strong growth in healthcare sector.,-3.74,-1.49,1.0,-0.39
+Vitality Pharma (VPHM),VPHM,Vitality Pharma (VPHM) reports strong growth in healthcare sector.,1.98,1.44,1.5,-0.16
+Vitality Pharma (VPHM),VPHM,Vitality Pharma (VPHM) reports strong growth in healthcare sector.,-0.29,-1.45,0.8,0.5
+Vitality Pharma (VPHM),VPHM,Vitality Pharma (VPHM) reports strong growth in healthcare sector.,-3.67,2.97,1.5,0.13
+Vitality Pharma (VPHM),VPHM,Vitality Pharma (VPHM) reports strong growth in healthcare sector.,-2.58,2.92,1.5,0.74
+Vitality Pharma (VPHM),VPHM,Vitality Pharma (VPHM) reports strong growth in healthcare sector.,-2.63,1.22,0.8,-0.15
+Global Trust Investments (GTI),GTI,Global Trust Investments (GTI) reports strong growth in finance sector.,-4.79,1.01,1.0,0.2
+Global Trust Investments (GTI),GTI,Global Trust Investments (GTI) reports strong growth in finance sector.,-4.42,1.61,1.5,0.31
+Global Trust Investments (GTI),GTI,Global Trust Investments (GTI) reports strong growth in finance sector.,-1.64,0.41,0.8,0.09
+Global Trust Investments (GTI),GTI,Global Trust Investments (GTI) reports strong growth in finance sector.,4.47,-1.63,0.8,-0.38
+Global Trust Investments (GTI),GTI,Global Trust Investments (GTI) reports strong growth in finance sector.,-2.3,0.24,0.8,0.89
+Global Trust Investments (GTI),GTI,Global Trust Investments (GTI) reports strong growth in finance sector.,3.38,-0.13,1.5,0.52
+Global Trust Investments (GTI),GTI,Global Trust Investments (GTI) reports strong growth in finance sector.,-4.73,2.84,1.0,0.48
+Global Trust Investments (GTI),GTI,Global Trust Investments (GTI) reports strong growth in finance sector.,-2.63,0.41,1.5,-0.21
+Sterling Bancorp (STBC),STBC,Sterling Bancorp (STBC) reports strong growth in finance sector.,-3.24,-0.53,0.8,0.34
+Sterling Bancorp (STBC),STBC,Sterling Bancorp (STBC) reports strong growth in finance sector.,-2.08,1.77,1.5,-0.25
+Sterling Bancorp (STBC),STBC,Sterling Bancorp (STBC) reports strong growth in finance sector.,-4.6,-2.22,1.5,-0.09
+Sterling Bancorp (STBC),STBC,Sterling Bancorp (STBC) reports strong growth in finance sector.,0.96,0.55,1.5,-0.43
+Sterling Bancorp (STBC),STBC,Sterling Bancorp (STBC) reports strong growth in finance sector.,4.34,-1.74,1.5,-0.14
+Sterling Bancorp (STBC),STBC,Sterling Bancorp (STBC) reports strong growth in finance sector.,4.39,2.88,1.5,-0.33
+Sterling Bancorp (STBC),STBC,Sterling Bancorp (STBC) reports strong growth in finance sector.,-3.64,-2.53,1.0,-0.07
+Sterling Bancorp (STBC),STBC,Sterling Bancorp (STBC) reports strong growth in finance sector.,-2.98,-1.51,0.8,0.28
+Edulink Learning (EDLK),EDLK,Edulink Learning (EDLK) reports strong growth in education sector.,3.61,-2.74,1.5,-0.19
+Edulink Learning (EDLK),EDLK,Edulink Learning (EDLK) reports strong growth in education sector.,-1.74,0.79,1.0,0.11
+Edulink Learning (EDLK),EDLK,Edulink Learning (EDLK) reports strong growth in education sector.,-4.18,2.55,0.8,-0.19
+Edulink Learning (EDLK),EDLK,Edulink Learning (EDLK) reports strong growth in education sector.,-0.54,-2.58,2.0,-0.06
+Edulink Learning (EDLK),EDLK,Edulink Learning (EDLK) reports strong growth in education sector.,1.52,-1.43,1.0,-0.07
+Edulink Learning (EDLK),EDLK,Edulink Learning (EDLK) reports strong growth in education sector.,-4.15,-1.4,0.8,-0.31
+Edulink Learning (EDLK),EDLK,Edulink Learning (EDLK) reports strong growth in education sector.,0.71,-0.85,1.0,-0.67
+Edulink Learning (EDLK),EDLK,Edulink Learning (EDLK) reports strong growth in education sector.,4.77,-1.36,1.0,0.72
+EduCorp International (EDCI),EDCI,EduCorp International (EDCI) reports strong growth in education sector.,2.34,-1.71,0.8,-0.67
+EduCorp International (EDCI),EDCI,EduCorp International (EDCI) reports strong growth in education sector.,2.5,-2.33,1.5,-0.07
+EduCorp International (EDCI),EDCI,EduCorp International (EDCI) reports strong growth in education sector.,-4.07,-1.84,1.0,0.16
+EduCorp International (EDCI),EDCI,EduCorp International (EDCI) reports strong growth in education sector.,4.73,2.38,1.0,0.65
+EduCorp International (EDCI),EDCI,EduCorp International (EDCI) reports strong growth in education sector.,-4.85,0.18,2.0,0.06
+EduCorp International (EDCI),EDCI,EduCorp International (EDCI) reports strong growth in education sector.,-1.77,2.09,0.8,0.14
+EduCorp International (EDCI),EDCI,EduCorp International (EDCI) reports strong growth in education sector.,-2.22,0.4,1.5,0.41
+EduCorp International (EDCI),EDCI,EduCorp International (EDCI) reports strong growth in education sector.,0.38,-1.58,2.0,0.05
