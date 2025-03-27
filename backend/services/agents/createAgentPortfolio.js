@@ -6,36 +6,36 @@ const createAgentPortfolio = async(agentID) => {
             balance: 1000000,
             stocks: {
                 "CYBR" : {
-                    quantity: 0,
-                    price: 0
+                    quantity: Math.floor(Math.random() * 1000),
+                    price: Math.random() * (5000 - 1000) + 1000
                 },
                 "EDCI" : {
-                    quantity: 0,
-                    price: 0
+                    quantity: Math.floor(Math.random() * 1000),
+                    price: Math.random() * (5000 - 1000) + 1000
                 }, 
                 "EDLK": {
-                    quantity: 0,
-                    price: 0
+                    quantity: Math.floor(Math.random() * 1000),
+                    price: Math.random() * (5000 - 1000) + 1000
                 }, 
                 "GTI": {
-                    quantity: 0,
-                    price: 0
+                    quantity: Math.floor(Math.random() * 1000),
+                    price: Math.random() * (5000 - 1000) + 1000
                 },
                 "MCRP": {
-                    quantity: 0,
-                    price: 0
+                    quantity: Math.floor(Math.random() * 1000),
+                    price: Math.random() * (5000 - 1000) + 1000
                 },
                 "NOVA": {
-                    quantity: 0,
-                    price: 0
+                    quantity: Math.floor(Math.random() * 1000),
+                    price: Math.random() * (5000 - 1000) + 1000
                 }, 
                 "STBC": {
-                    quantity: 0,
-                    price: 0
+                    quantity: Math.floor(Math.random() * 1000),
+                    price: Math.random() * (5000 - 1000) + 1000
                 },
                 "VPHM": {
-                    quantity: 0,
-                    price: 0
+                    quantity: Math.floor(Math.random() * 1000),
+                    price: Math.random() * (5000 - 1000) + 1000
                 }
             },
             lastModified: new Date().toISOString()
@@ -60,8 +60,11 @@ const fetchAgentPortfolio = async(agentID) => {
 
 const main = async() => {
     try {
-        const agentID = 'momentum-trader';
-        await createAgentPortfolio(agentID);
+        const agentIDs = ['mean-reversion-trader', 'breakout-trader', 'contrarian-trader', 'trend-follower-trader'];
+        for (const agentID of agentIDs) {
+            await createAgentPortfolio(agentID);
+        }
+        console.log('Agent portfolios created successfully.');
     } catch (err) {
         console.error('Error creating agent portfolio:', err);
     }

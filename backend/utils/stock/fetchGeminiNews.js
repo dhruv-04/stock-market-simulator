@@ -48,38 +48,7 @@ const generateNews = async() => {
 
         sectorInp = sectors[Math.floor(Math.random() * sectors.length)];
     
-        const prompt = `
-    This is simulated stock market environment. The company, sectors and their stock movements are
-    fictional. Generate a short stock market news update for a company in ${sectorInp}. The companies names are ${companies[sectorInp][0]} and ${companies[sectorInp][1]}.
-    
-    Ensure that the sentiment is influenced by both the individual company's situation and the broader
-    sector trends. The volatility should reflect the overall impact of the news. 
-    
-    DO not include exact stock prices or financial figures. Only return a valid JSON response in the following format:-
-    
-    {
-          ${companies[sectorInp][0]} : {
-            news : "2-3 lines",
-            randomness : "to add uniqueness",
-            volatility : "would describe the condition of change of stock price",
-            sector_sentiment: "would describe the sector sentiment",
-            company_sentiment : "Would describe the company sentiment",
-            sector: ${sectorInp},
-        },
-        ${companies[sectorInp][1]} : {
-            news : "2-3 lines",
-            randomness : to add uniqueness
-            volatility : would describe the condition of change of stock price
-            sector_sentiment: would describe the sector sentiment
-            company_sentiment : Would describe the company sentiment
-            sector: ${sectorInp},
-        }
-    }
-    
-    The available values for sector sentiment and company sentiment are highly_positive, positive, neutral, negative, and highly negative. The available values for volatility are low, moderate, high, extreme. The available values for randomness are low, moderate and high.
-    
-    DO NOT DEVIATE FROM THE GIVEN JSON FORMAT. Also make sure, that all the factors listed in the JSON format, should be relatable with the news.
-    `;
+        const prompt = `This is simulated stock market environment. The company, sectors and their stock movements are fictional. Generate a short stock market news update for a company in ${sectorInp}. The companies names are ${companies[sectorInp][0]} and ${companies[sectorInp][1]}. Ensure that the sentiment is influenced by both the individual company's situation and the broader sector trends. The volatility should reflect the overall impact of the news. DO not include exact stock prices or financial figures. Only return a valid JSON response in the following format:- {${companies[sectorInp][0]} : {news : "2-3 lines",randomness : "to add uniqueness",volatility : "would describe the condition of change of stock price",sector_sentiment: "would describe the sector sentiment",company_sentiment : "Would describe the company sentiment",sector: ${sectorInp},},${companies[sectorInp][1]} : {news : "2-3 lines",randomness : "to add uniqueness",volatility : "would describe the condition of change of stock price",sector_sentiment: "would describe the sector sentiment",company_sentiment : "Would describe the company sentiment",sector: ${sectorInp},}}. The available values for sector sentiment and company sentiment are highly_positive, positive, neutral, negative, and highly negative. The available values for volatility are low, moderate, high, extreme. The available values for randomness are low, moderate and high. DO NOT DEVIATE FROM THE GIVEN JSON FORMAT. Also make sure, that all the factors listed in the JSON format, should be relatable with the news.`;
     
         const result = await model.generateContent(prompt);
 
