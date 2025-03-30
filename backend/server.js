@@ -1,27 +1,14 @@
 const express = require('express');
-const cron = require('node-cron'); // Install using: npm install node-cron
+const cron = require('node-cron'); 
+const cors = requier('cors');
 
 const app = express();
+app.use(cors()); // Enable CORS for all routes
+app.use(express.json()); // Parse JSON bodies
 const PORT = 3000;
 
-// Example task to be executed by the cron job
-const executeCronJob = () => {
-    console.log(`Cron job executed at ${new Date().toISOString()}`);
-    // Add your logic here (e.g., calling a function, processing data, etc.)
-};
-
-// Schedule a cron job to run every 2 minutes
-cron.schedule('*/2 * * * *', () => {
-    console.log('Running cron job...');
-    const { main } = require('./services/agents/geminiAgents');
-    executeCronJob();
-    main();
-});
-
-// Basic route for testing the server
-app.get('/', (req, res) => {
-    res.send('Server is running!');
-});
+//api to call users function
+app.routes
 
 // Start the server
 app.listen(PORT, () => {
