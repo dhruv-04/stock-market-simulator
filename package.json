@@ -14,12 +14,17 @@
     "@google/generative-ai": "^0.24.0",
     "@mistralai/mistralai": "^1.5.2",
     "axios": "^1.8.4",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "csv-parser": "^3.2.0",
     "csv-writer": "^1.6.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "firebase-admin": "^13.2.0",
+    "mysql2": "^3.14.0",
     "node-cron": "^3.0.3",
-    "redis": "^4.7.0"
+    "redis": "^4.7.0",
+    "sequelize": "^6.37.7",
+    "snowflake-id": "^1.1.0"
   }
 }
