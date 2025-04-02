@@ -246,12 +246,31 @@ const limitSellOrder = async(order) => {
 };
 
 // This function is responsible for executing an order based on the process type and order type.
-const executeOrder = async(processType, orderType, req, res) => {
+const executeOrder = async(processType, orderType, order, res) => {
     try {
         const id = generateOrderID();
-        // order.order_id = id;
+        order.order_id = id;
+        console.log(`Executing order: ${JSON.stringify(order)}`);
+        if (processType === 'MARKET') {
+            if (orderType === 'BUY') {
+                await limitBuyOrder(order);
+            } else if (orderType === 'SELL') {
+                await limitSellOrder(order);
+            }
+        } else if (processType === 'LIMIT') {
+            if (orderType === 'BUY') {
+                await limitBuyOrder(order);
+            } else if (orderType === 'SELL') {
+                await limitSellOrder(order);
+            }
+        }
+        res.status(200).send({ message: 'Order executed successfully', order });
     } catch (err) {
         console.error('Error executing order:', err);
         throw err;
     }
 };
+
+module.exports = {
+    executeOrder
+}
