@@ -7,8 +7,8 @@ app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Parse JSON bodies
 const PORT = 3000;
 
-//api to call users function
-app.routes
+//api to call user order function
+app.use('/api/users/orders', require('./routes/userOrderRoutes'));
 
 // Start the server
 app.listen(PORT, () => {
